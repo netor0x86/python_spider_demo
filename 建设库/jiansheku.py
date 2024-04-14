@@ -65,7 +65,7 @@ headers = {
     'timestamp': result['time'],
 }
 
-response = requests.post('', cookies=cookies, headers=headers,
+response = requests.post('https://capi.jiansheku.com/nationzj/enterprice/page', cookies=cookies, headers=headers,
                          json=json_data)
 print(response.text)
 # Note: json_data will not be serialized by requests
