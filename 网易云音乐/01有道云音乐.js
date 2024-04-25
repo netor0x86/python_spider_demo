@@ -1,6 +1,6 @@
 const CryptoJS = require('crypto-js')
 
-window = {}
+window = global
 
 function RSAKeyPair(a, b, c) {
     this.e = biFromHex(a),
@@ -417,6 +417,7 @@ function BarrettMu_powMod(a, b) {
     }
     return c
 }
+
 var maxDigits, ZERO_ARRAY, bigZero, bigOne, dpl10, lr10, hexatrigesimalToChar, hexToChar, highBitMasks, lowBitMasks, biRadixBase = 2, biRadixBits = 16, bitsPerDigit = biRadixBits, biRadix = 65536, biHalfRadix = biRadix >>> 1, biRadixSquared = biRadix * biRadix, maxDigitVal = biRadix - 1, maxInteger = 9999999999999998;
 setMaxDigits(20),
 dpl10 = 15,
@@ -425,8 +426,8 @@ hexatrigesimalToChar = new Array("0","1","2","3","4","5","6","7","8","9","a","b"
 hexToChar = new Array("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"),
 highBitMasks = new Array(0,32768,49152,57344,61440,63488,64512,65024,65280,65408,65472,65504,65520,65528,65532,65534,65535),
 lowBitMasks = new Array(0,1,3,7,15,31,63,127,255,511,1023,2047,4095,8191,16383,32767,65535);
-!function() {
-    function a(a) {
+
+function a(a) {
         var d, e, b = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", c = "";
         for (d = 0; a > d; d += 1)
             e = Math.random() * b.length,
@@ -465,15 +466,13 @@ lowBitMasks = new Array(0,1,3,7,15,31,63,127,255,511,1023,2047,4095,8191,16383,3
     }
     window.asrsea = d,
     window.ecnonasr = e
-}();
 
-function call() {
-    param1 = '{"ids":"[1376142151]","level":"standard","encodeType":"aac","csrf_token":""}'
+function getParam(id) {
+    param1 = `{"ids":"[${id}]","level":"standard","encodeType":"aac","csrf_token":""}`
     param2 = '010001'
     param3 = '00e0b509f6259df8642dbc35662901477df22677ec152b5ff68ace615bb7b725152b3ab17a876aea8a5aa76d2e417629ec4ee341f56135fccf695280104e0312ecbda92557c93870114af6c9d05c4f7f0c3685b7a46bee255932575cce10b424d813cfe4875d3e82047b97ddef52741d546b8e289dc6935b3ece0462db0a22b8e7'
     param4 = '0CoJUm6Qyw8W8jud'
-
-    ret = window.asrsea(param1, param2, param3, param4)
-    // console.log(ret)
-    return ret
+    // console.log(window.asrsea(param1, param2, param3, param4))
+     return window.asrsea(param1, param2, param3, param4)
 }
+
