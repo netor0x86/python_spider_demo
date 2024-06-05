@@ -18,7 +18,7 @@ Python JS逆向 爬虫 的各种 Demo <br>
 | 采招网    |
 | 企名片科技  |
 | 新东方    
-| 惠农网    |
+| 惠农网    | webpack | 补环境 |
 | 贝壳     |                           |
 | 扇贝     |
 | 天翼云    |
@@ -31,7 +31,8 @@ Python JS逆向 爬虫 的各种 Demo <br>
 | 公共服务平台 | 返回数据的解密，请求接口的 portal-sign | AES |
 | XHS    | 接口中的 x-s                  | 补环境 |
 | DY     | 接口中的 a-b                  | 补环境 |
-| ZH     | 接口中的 X-Zes-96             | 补环境 |                  
+| ZH     | 接口中的 X-Zes-96             | 补环境 |      
+| 惠农完 | 接口中的 X-CLIENT-SIGN | md5+sha1+sha384|
 
 # 我的公众号
 
